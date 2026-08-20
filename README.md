@@ -22,14 +22,37 @@
 | 에러 가시성 | 무경보 (22.6만 건 잠복) | **경보·메트릭 필터 39개 · 대시보드 12개** |
 | 보안 | 수기 대응 | **SIEM 구축 · ISMS-P 자체 감사 (취약점 72건 식별)** |
 
-### 만들어 온 파이프라인
+### 운영 중인 AWS 인프라 (스테이징 전체를 Terraform으로 단독 구축)
 
 ```mermaid
 flowchart LR
-  A["이벤트<br/>로그 · 에러 · 트래픽"] --> B["수집 · 판정<br/>SIEM · 메트릭 필터"]
-  B --> C["알림<br/>SNS 경보 · 결재/소명"]
-  C --> D["대시보드<br/>임원 · 운영 관제"]
-  D --> E["개선 실측<br/>Cost Explorer · k6"]
+  subgraph CI ["CI/CD"]
+    GH["GitHub Actions<br/>(OIDC, 장기 자격증명 없음)"] --> ECR["ECR<br/>이미지 레지스트리"]
+  end
+  subgraph VPC ["3-tier VPC · Multi-AZ"]
+    ALB["ALB"] --> ASG["EC2 Auto Scaling"]
+    ASG --> RDS[("RDS<br/>Multi-AZ")]
+    ASG --> REDIS[("Redis")]
+    ASG --> DDB[("DynamoDB")]
+  end
+  ECR --> ASG
+  ASG --> CW["CloudWatch<br/>경보 39 · 대시보드 12"]
+  CW --> SNS["SNS 알림"]
 ```
+
+### 대표 프로젝트
+
+| 프로젝트 | 어떤 문제를 풀었나 | 스택 | 링크 |
+|---|---|---|---|
+| **PlanIt** | 스크럼 작성이 며칠이면 끊기는 문제를 주기 자동화·봇 연동으로 | NestJS · Next.js · PostgreSQL | [planit.haeyounglab.com](https://planit.haeyounglab.com) |
+| **R&D 오토노트** | 연구 증빙이 협업 툴에 흩어져 소명이 어려운 문제를 RAG 파이프라인으로 | FastAPI · pgvector · LangChain | [상세 보기](https://team.haeyounglab.com/projects/rd-autonote) |
+| **팀 포트폴리오 플랫폼** | 이력 데이터를 실측 지표·다이어그램 중심으로 보여주는 사이트 | Next.js · Mermaid | [team.haeyounglab.com](https://team.haeyounglab.com) |
+
+### 활동
+
+<p>
+  <img src="https://github-readme-stats.vercel.app/api?username=SouthSea0613&show_icons=true&hide_title=true&hide_rank=true&locale=kr" alt="GitHub 활동 통계" height="150" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=SouthSea0613&layout=compact&locale=kr" alt="주요 언어" height="150" />
+</p>
 
 **Portfolio** · [team.haeyounglab.com/Namhae_Kim](https://team.haeyounglab.com/Namhae_Kim) · **Contact** · tksz0613@gmail.com
