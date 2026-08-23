@@ -22,6 +22,8 @@
 | 에러 가시성 | 무경보 (22.6만 건 잠복) | **경보·메트릭 필터 39개 · 대시보드 12개** |
 | 보안 | 수기 대응 | **SIEM 구축 · ISMS-P 자체 감사 (취약점 72건 식별)** |
 
+**Case Study** · [경보가 없으면 사고가 없는 것이 아니라, 보이지 않을 뿐이다](https://team.haeyounglab.com/Namhae_Kim/case-observability) — 무경보 실서비스에서 무장애 운영까지 3개월의 기록
+
 ### 운영 중인 AWS 인프라 (스테이징 전체를 Terraform으로 단독 구축)
 
 ```mermaid
