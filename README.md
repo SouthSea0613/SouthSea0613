@@ -26,7 +26,7 @@
 
 모든 수치는 CloudWatch · CloudTrail · GitHub Actions · Cost Explorer 실측값이며, 조건은 [포트폴리오](https://team.haeyounglab.com)의 각 사례에 적혀 있습니다.
 
-**Case Study** · [경보가 없으면 사고가 없는 것이 아니라, 보이지 않을 뿐이다](https://team.haeyounglab.com/Namhae_Kim/case-observability) — 무경보 실서비스에서 무장애 운영까지 3개월의 기록
+**Case Study** · [경보가 없으면 사고가 없는 것이 아니라, 보이지 않을 뿐이다](https://team.haeyounglab.com/namhae/case-observability) — 무경보 실서비스에서 무장애 운영까지 3개월의 기록
 
 ### 운영 중인 AWS 인프라 (스테이징·prod 환경을 Terraform으로 구축)
 
@@ -68,4 +68,4 @@ flowchart LR
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=SouthSea0613&layout=compact&locale=kr" alt="주요 언어" height="150" />
 </p>
 
-**Portfolio** · [team.haeyounglab.com](https://team.haeyounglab.com) · **Contact** · tksz0613@gmail.com
+**Portfolio** · [team.haeyounglab.com/namhae](https://team.haeyounglab.com/namhae) · **Contact** · tksz0613@gmail.com
